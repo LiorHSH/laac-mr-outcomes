@@ -28,21 +28,6 @@ IDX_Varaibles <- c("CHA2DS2_VASc", "Atria_Bleeding_Score","Charlson_Index")
 ## You MUST change working directory BEFORE running next command.
 current_data <- read_sav("LAAC_ANY_2016_2021.sav")  #SAV file name
 
-# Count Females
-female_rows = current_data %>%
-  filter(current_data$FEMALE == 1)
-females = nrow(female_rows)
-all_rows = nrow(current_data)
-female_percent = 100*(females/all_rows)
-
-# get mean age
-mean_age = mean(current_data$AGE)
-std_age = sd(current_data$AGE)
-
-# get mean LOS
-mean_LOS = mean(current_data$LOS)
-std_LOS = sd(current_data$LOS)
-
 #This file contains all background info ICD10 codes (including background info that is only used to calculate index values).
 Background_Info_DF <- read.csv("Background_Info.csv")
 
@@ -288,7 +273,6 @@ for (i in 1:length(Table1_Continuos_Varaibles)) {
 for (i in 1:length(Table1_Categorical_Variables)) {
   column_IDX = match(Table1_Categorical_Variables[i], names(current_data))
   Table1 = Categorical_Test(column_IDX, current_data, Sum_Weights_No_Var ,Sum_Weights_Var, Table1)}
-Table1
 write.csv(Table1, "table1.csv", row.names = FALSE)
 
 
@@ -305,7 +289,6 @@ for (i in 1:length(Table2_Continuos_Variables)){
 for (i in 1:length(Table2_Categorical_Variables)){
   column_IDX = match( Table2_Categorical_Variables[i], names(current_data))
   Table2 = Categorical_Test(column_IDX, current_data, Sum_Weights_No_Var ,Sum_Weights_Var, Table2)}
-Table2
 write.csv(Table2, "table2.csv", row.names = FALSE)
 
 ## Count all complications
@@ -325,13 +308,14 @@ for (i in 1:length(Categorical_Varaibles_to_Factor )){
 
 # Following function checks for significance of relation between each of the background characteristics and a chosen complication, and then selects the significant characteristics.
 #Selected characteristics are tested in a logistics regression model. Function returns a table showing each characteristic's OR, 95% CI and P value as well as the model's R squared and its p value.
+# rows are duplicated *5 as every row is the equivalent of 5 patients in reality.
 Log_Model <- function(complication, current_data, Table1_Continuos_Varaibles, Table1_Categorical_Variables, logistic_regression_table) {
   formula_syntax = paste(complication, "~ Factor_Subset_Column")
   Complication_Col_IDX = match(complication, names(current_data))
   for (i in 1:length(Table1_Continuos_Varaibles))
   { Col_IDX = match(Table1_Continuos_Varaibles[i], names(current_data))
     No_Condition_Subset_Column <- unlist(current_data[current_data[,Complication_Col_IDX]== 0, Col_IDX])
-    No_Condition_Subset_Column <- rep(No_Condition_Subset_Column, 5)
+    No_Condition_Subset_Column <- rep(No_Condition_Subset_Column, 5) 
     Condition_Subset_Column <- unlist(current_data[current_data[,Complication_Col_IDX] == 1, Col_IDX])
     Condition_Subset_Column <- rep(Condition_Subset_Column, 5)
     if (Continous_Columns_DF[i,3] ==1){

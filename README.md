@@ -6,7 +6,7 @@ R analysis pipeline used in:
 > *Journal of Interventional Cardiac Electrophysiology* (2025).
 > [https://doi.org/10.1007/s10840-025-02200-x](https://link.springer.com/article/10.1007/s10840-025-02200-x)
 
-The script reproduces the descriptive tables, statistical comparisons, multivariable logistic regression and forest plot reported in the paper. It is built on top of the **HCUP National Inpatient Sample (NIS)** for the years 2016–2021, but the same pipeline can be reused for any NIS-based two-group comparison (see [Adapting the pipeline](#adapting-the-pipeline)).
+The script reproduces the descriptive tables, statistical comparisons, multivariable logistic regression and forest plot reported in the paper. It is built on top of the **HCUP National Inpatient Sample (NIS)** for the years 2016–2021.
 
 ---
 

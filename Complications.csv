@@ -1,0 +1,31 @@
+﻿Complication,Values,Category
+Cardiac,"Cardiogenic_Shock,Pericarditis,Need_for_Pericardiocentasis,Cardiac_Tamponade,Device_Displacement,Peri_device_Leak,Need_for_Open_Heart_Surgery,Cardiac_arrest,Myocardial_infarction",Category
+Myocardial_infarction,"I97790,I97190",DX
+Cardiac_arrest,"I462,I469,I97120,I97710",DX
+Cardiogenic_Shock,T8111XA,DX
+Device_Displacement,"T82528A,T82528D,T82528S,T82529A,T82529D,T82529S",DX
+Peri_device_Leak,"T82538A,T82538D,T82538S,T82539A,T82539D,T82539S",DX
+Pericarditis,"I300,I301,I308,I309",DX
+Cardiac_Tamponade,"I314,I312",DX
+Need_for_Pericardiocentasis,"0W9D30Z,0W9D3ZZ,0W9D40Z,0W9D4ZX,0W9D4ZZ",PR
+Need_for_Open_Heart_Surgery,"028D0ZZ,02890ZZ,02BK0ZZ,02NK0ZZ,02QF0ZZ,02QA0ZZ,02B50ZZ,02RM0JZ,02RM0KZ ,02U50JZ,024G0J2,02RM07Z,02U507Z,02RM08Z,024G072,02Q50ZZ,02QM0ZZ,02QB0ZZ,02U50JZ,021608P,02W50JZ,02Q50ZZ,021K0Z5,02B60ZZ",PR
+Systemic,"Sepsis,Anaphylaxis",Category
+Anaphylaxis,"T782XXA,T782XXD,T782XXS",DX
+Sepsis,"R6521,T80211A,T8149XA,T8144XA,T8112XA",DX
+Vascular,"Intra_or_Post_Operative_Hematoma_Requiring_Transfusion,Aneurysm_or_AV_Fistula,Arterial_thromboembolism,Venous_Thromboembolism",Category
+Intra_or_Post_Operative_Hematoma_Requiring_Transfusion,"K91621,K91841,I97418,G9752,I97618,N99821,30233H1,30233N1",DX
+Venous_Thromboembolism,"I82A11,I82A12,I82A13,I82A19,I82A21,I82A21,I82A22,I82A22,I82A23,I82A29,I82B11,I82B12,I82B13,I82B19,I82B21,I82B22,I82B23,I82B29,I82C11,I82C12,I82C13,I82C19,I82C21,I82C22,I82C23,I82C29",DX
+Arterial_thromboembolism,"I742,I743,I744,I745,I748,I749,I7401,I7409,I7410,I7411,I7419",DX
+Aneurysm_or_AV_Fistula,"I770,I724",DX
+Pulmonary,"Post_Procedure_Respiratory_Failure,Intubation_Over_24_Hours,Diaphragmatic_disorder",Category
+Post_Procedure_Respiratory_Failure,"J95821,J9588,J9589",DX
+Diaphragmatic_disorder,J986,DX
+Intubation_Over_24_Hours,"5A1945Z,5A1955Z,0B110F4,0B113F4",PR
+Neurologic,"CVA, Intracranial_hemorrhage",Category
+CVA,"I97810,I97820",DX
+ Intracranial_hemorrhage,"G9752,G9762,G9732",DX
+Renal,"Acute_Kidney_Injury,Need_for_Hemodialysis",Category
+Acute_Kidney_Injury,N179,DX
+Need_for_Hemodialysis,"5A1D70Z,5A1D80Z,5A1D90Z",PR
+Total_Complication_Rate,"Cardiac,Vascular,Neurologic,Pulmonary,Renal,Mortality,Systemic",Category
+Major_Complications,"Cardiac_arrest,CVA,Mortality, Intracranial_hemorrhage,Arterial_thromboembolism,Intra_or_Post_Operative_Hematoma_Requiring_Transfusion,Myocardial_infarction,Vascular,Device_Displacement,Need_for_Pericardiocentasis,Cardiac_Tamponade",Category

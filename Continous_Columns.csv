@@ -1,0 +1,6 @@
+Variable_Name,Variable_Table,Treat_as_Normally_Distributed
+AGE,1,1
+CHA2DS2_VASc,1,1
+Atria_Bleeding_Score,1,0
+Charlson_Index,1,0
+Length_of_Stay,2,0
